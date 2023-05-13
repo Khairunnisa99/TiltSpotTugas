@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity
     // non-zero drift.
     private static final float VALUE_DRIFT = 0.05f;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
