@@ -107,7 +107,7 @@ limitations under the License. -->
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/spot"
+        app:srcCompat="@drawable/ugm"
         tools:ignore="ContentDescription" />
 
     <ImageView
@@ -119,7 +119,7 @@ limitations under the License. -->
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/spot"
+        app:srcCompat="@drawable/ugm"
         tools:ignore="ContentDescription" />
 
     <ImageView
