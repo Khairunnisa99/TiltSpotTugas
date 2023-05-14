@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity
     private float[] mAccelerometerData = new float[3];
     private float[] mMagnetometerData = new float[3];
 
+
     // TextViews to display current sensor values.
     private TextView mTextSensorAzimuth;
     private TextView mTextSensorPitch;
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity
     private TextView label;
     private TextView label1;
     private TextView label2;
+
 
     // Very small values for the accelerometer (on all three axes) should
     // be interpreted as 0. This value is the amount of acceptable
@@ -110,6 +112,7 @@ public class MainActivity extends AppCompatActivity
         // Get the display from the window manager (for rotation).
         WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
         mDisplay = wm.getDefaultDisplay();
+
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,20 +124,17 @@ public class MainActivity extends AppCompatActivity
                     try {
                         File gpxfile = new File(file, "sample");
                         FileWriter writer = new FileWriter(gpxfile);
-                        writer.append(label.getText().toString());
-                        writer.append(mTextSensorAzimuth.getText().toString());
-                        writer.append(label1.getText().toString());
-                        writer.append(mTextSensorPitch.getText().toString());
-                        writer.append(label2.getText().toString());
-                        writer.append(mTextSensorRoll.getText().toString());
+
+                        writer.append(label.getText().toString() +"\t:\t");
+                        writer.append(mTextSensorAzimuth.getText().toString() + "\n");
+                        writer.append(label1.getText().toString() +"\t:\t");
+                        writer.append(mTextSensorPitch.getText().toString()  + "\n");
+                        writer.append(label2.getText().toString() +"\t:\t");
+                        writer.append(mTextSensorRoll.getText().toString()  + "\n");
+
                         writer.flush();
                         writer.close();
 
-//                        mTextSensorAzimuth.setText(readFile());
-//
-//                        mTextSensorPitch.setText(readFile());
-//
-//                        mTextSensorRoll.setText(readFile());
                         Toast.makeText(getBaseContext(), "File saved successfully!",
                                 Toast.LENGTH_SHORT).show();
                     } catch (Exception e) {
